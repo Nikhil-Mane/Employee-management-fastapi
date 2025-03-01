@@ -1,8 +1,7 @@
-from pydantic import BaseModel,Field
-from typing import Optional,Annotated
+from pydantic import BaseModel
+from typing import List, Optional
 
-class employee(BaseModel):
-    id:int
-    name:str=Field(...,min_length=2,max_length=10)
-    surname:str|None
-    mobile:Optional[int|None]=None
+class Employee(BaseModel):
+    username: str
+    password: str
+    scopes: Optional[List[str]] = ["user"]
